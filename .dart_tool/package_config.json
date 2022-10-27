@@ -68,12 +68,6 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "fluttertoast",
-      "rootUri": "file:///Users/abhinavanand/development/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.1.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "geolocator",
       "rootUri": "file:///Users/abhinavanand/development/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator-9.0.2",
       "packageUri": "lib/",
@@ -108,6 +102,18 @@
       "rootUri": "file:///Users/abhinavanand/development/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_windows-0.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.15"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///Users/abhinavanand/development/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/abhinavanand/development/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "js",
@@ -194,6 +200,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "typed_data",
+      "rootUri": "file:///Users/abhinavanand/development/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///Users/abhinavanand/development/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2",
       "packageUri": "lib/",
@@ -206,7 +218,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-10-21T18:56:18.929487Z",
+  "generated": "2022-10-25T05:29:30.556577Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }
