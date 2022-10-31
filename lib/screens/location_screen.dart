@@ -1,27 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/utilities/constants.dart';
+import 'package:weatherapp/services/weather.dart';
 
 
 class LocationScreen extends StatefulWidget {
+
+  LocationScreen({this.locationWeather});
+
+  final locationWeather;
   @override
   _LocationScreenState createState() => _LocationScreenState();
 }
 
 class _LocationScreenState extends State<LocationScreen> {
 
-  void getLocation() async{
+  WeatherModel weather = WeatherModel();
 
+  int? temperature;
+  int?  condition;
+  String? cityName;
+  String? weatherIcon;
+  String? weatherMessage;
 
-
-
+   @override
+  void initState() {
+    // 
+    super.initState();
+    updateUI(widget.locationWeather);
   }
+
+  void updateUI(dynamic weatherData){
+    double temp = weatherData['main']['temp'];
+    temperature = temp.toInt();
+    condition = weatherData['weather'][0]['id'];
+    weatherIcon = weather.getWeatherIcon(condition!);
+    weatherMessage = weather.getMessage(temperature!);
+
+    cityName = weatherData['name'];
+
+    print(temperature);
+//
+  }
+
+  // void getLocation() async{
+  //
+  //
+  //
+  //
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/location_background.jpg'),
+            image: AssetImage('assets/images/location_background.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
                 Colors.white.withOpacity(0.8), BlendMode.dstATop),
@@ -57,12 +90,13 @@ class _LocationScreenState extends State<LocationScreen> {
                 child: Row(
                   children: <Widget>[
                     Text(
-                      '32°',
+                      '$temperature°',
                       style: kTempTextStyle,
                     ),
                     Text(
-                      '☀️',
-                      style: kConditionTextStyle,
+                      '$weatherIcon',
+                      style: kConditionTextStyle ,
+
                     ),
                   ],
                 ),
@@ -70,7 +104,7 @@ class _LocationScreenState extends State<LocationScreen> {
               Padding(
                 padding: EdgeInsets.only(right: 15.0),
                 child: Text(
-                  "It's 🍦 time in San Francisco!",
+                  '$weatherMessage time in $cityName!',
                   textAlign: TextAlign.right,
                   style: kMessageTextStyle,
                 ),
@@ -82,3 +116,9 @@ class _LocationScreenState extends State<LocationScreen> {
     );
   }
 }
+
+
+
+
+
+
